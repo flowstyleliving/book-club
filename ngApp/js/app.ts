@@ -8,11 +8,17 @@ namespace app {
 
     $stateProvider.state('Home', {
       url: '/',
-      templateUrl: '/templates/home.html',
-      controller: app.Controllers.HomeController,
+      templateUrl: '/templates/home.jade',
+      controller: 'HomeController',
       controllerAs: 'vm'
-    });
-    
+    }).state('Create Book', {
+      url: '/create',
+      templateUrl: '/templates/createBook.html',
+      controller: 'BookCreateController',
+      controllerAs: 'vm'
+    })
+
+
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
   });

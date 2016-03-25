@@ -1,8 +1,10 @@
 namespace app.Controllers {
   export class HomeController {
 
-    constructor() {
+    public books: Array<app.i.IBook>;
 
+    constructor(private BookService: app.Services.BookService) {
+      this.books = BookService.getAll();
     }
   }
 
