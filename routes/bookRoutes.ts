@@ -1,14 +1,17 @@
 import * as express from 'express';
-import * as controller from '../api/bookController';
+import {controller} from '../api/bookController';
+import {Book} from '../models/Book';
 
+// loose coupling
+const ctrl = controller(Book);
 const router = express.Router();
 // Base Route = /api/v1/books
 
 // GET: /api/v1/books
-router.get('/', controller.getAll);
+router.get('/', ctrl.getAll);
 
 // POST: /api/v1/books
-router.post('/', controller.create);
+router.post('/', ctrl.create);
 
 
 export = router;

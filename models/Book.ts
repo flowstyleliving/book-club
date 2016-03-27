@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+
 export interface IBookModel extends app.i.IBook, mongoose.Document {};
 
 let bookSchema = new mongoose.Schema({
